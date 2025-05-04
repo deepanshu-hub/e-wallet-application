@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.e-wallet</groupId>
-	<artifactId>demo-e-wallet</artifactId>
+	<artifactId>e-wallet-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>demo-e-wallet</name>
