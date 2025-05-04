@@ -67,6 +67,38 @@ Follow these steps to set up and run the E-Wallet Application on your local mach
   # In a new terminal, start Kafka broker
   bin/kafka-server-start.sh config/server.properties
 
+## 📧 Gmail Setup for JavaMailSender (Using App Password)
+
+To send emails using Gmail SMTP in your Spring Boot application with `JavaMailSenderImpl`, you **must use an App Password** (not your regular Gmail password), especially if your account has 2-Step Verification enabled.
+
+---
+
+### ✅ Step-by-Step: Generate Gmail App Password
+
+1. **Enable 2-Step Verification**
+
+   - Visit: [https://myaccount.google.com/security](https://myaccount.google.com/security)
+   - Scroll to **"Signing in to Google"**
+   - Enable **2-Step Verification** and complete the setup
+
+2. **Generate an App Password**
+
+   - Go to: [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+   - Sign in if prompted
+   - Under **Select App**, choose `Mail`
+   - Under **Select Device**, choose or name your app (e.g., `Spring App`)
+   - Click **Generate**
+   - Copy the **16-character App Password**
+
+3. **Use the App Password in Your Notification Configuration**
+
+   ```java
+   JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+   mailSender.setHost("smtp.gmail.com");
+   mailSender.setPort(587);
+   mailSender.setUsername("your-email@gmail.com");
+   mailSender.setPassword("your-16-char-app-password");
+
 
 ### 🔄 Run All Microservices
 
