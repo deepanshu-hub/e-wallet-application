@@ -43,7 +43,7 @@ public class NotificationConfig {
         javaMailSender.setPort(587);
         javaMailSender.setUsername("rsdd04@gmail.com");
         ////update pasword check in file ----- removing due security purpose
-        javaMailSender.setPassword("jpot isph hcxz iing");
+        javaMailSender.setPassword("jpot isph hcxz jknc");
 
 
         Properties properties = javaMailSender.getJavaMailProperties();
